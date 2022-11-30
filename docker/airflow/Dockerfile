@@ -1,8 +1,9 @@
 # Base Image
 FROM spark-base:latest
+LABEL maintainer="MarcLamberti"
 
 # Arguments that can be set with docker build
-ARG AIRFLOW_VERSION=latest
+ARG AIRFLOW_VERSION=2.1.4
 ARG AIRFLOW_HOME=/opt/airflow
 
 # Export the environment variable AIRFLOW_HOME where airflow will be installed
@@ -68,6 +69,6 @@ RUN mkdir -p ${AIRFLOW_HOME}/dags
 EXPOSE 8080
 
 # Execute start-airflow.sh
-CMD [ "./start_airflow.sh" ]
+CMD [ "./start-airflow.sh" ]
 
     
