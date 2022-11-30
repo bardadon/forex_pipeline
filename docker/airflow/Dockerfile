@@ -48,7 +48,7 @@ RUN pip install --upgrade "pip==20.2.4" && \
     pip install apache-airflow-providers-http==2.0.1
 
 # Copy the airflow.cfg file (config)
-COPY ./config/airflow.cfg ${AIRFLOW_HOME}/airflow.cfg
+COPY ./airflow.cfg ${AIRFLOW_HOME}/airflow.cfg
 
 # Set the owner of the files in AIRFLOW_HOME to the user airflow
 RUN chown -R airflow: ${AIRFLOW_HOME}
